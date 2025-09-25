@@ -1,13 +1,13 @@
-package com.ProjetoDemo.TesteCadastro;
+package br.loginCadastro.loginCadastro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TesteCadastroApplication {
+public class LoginCadastroApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TesteCadastroApplication.class, args);
+		SpringApplication.run(LoginCadastroApplication.class, args);
 	}
 
 }

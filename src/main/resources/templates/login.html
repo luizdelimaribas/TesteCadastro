@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #080808;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: #052fe9;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      color: white;
+    }
+    .login-container input {
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-container button {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #089ce0;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background: #06375f;
+    }
+    .login-container .cadastro {
+      background: #28a745;
+    }
+    .login-container .cadastro:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form th:action="@{/login}" method="post">
+      <input type="email" name="email" placeholder="Digite seu e-mail" required>
+      <input type="password" name="senha" placeholder="Digite sua senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <button type="button" class="cadastro" th:onclick="|window.location.href='@{/cadastro}'|">Cadastrar-se</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #141516ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .cadastro-container {
+      background: #0b0fe6ff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    .cadastro-container h2 {
+      margin-bottom: 20px;
+      color: white;
+    }
+    .cadastro-container input {
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .cadastro-container button {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+    }
+    .btn-cadastrar {
+      background: #28a745;
+    }
+    .btn-cadastrar:hover {
+      background: #0d6354ff;
+    }
+    .btn-voltar {
+      background: #28a745;
+    }
+    .btn-voltar:hover {
+      background: #0d6354ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="cadastro-container">
+    <h2>Cadastro</h2>
+    <form th:action="@{/cadastro}" th:object="${usuarioDTO}" method="post">
+      <input type="text" th:field="*{nome}" placeholder="Digite seu nome" required>
+      <input type="email" th:field="*{email}" placeholder="Digite seu e-mail" required>
+      <input type="password" th:field="*{senha}" placeholder="Digite sua senha" required>
+      <button type="submit" class="btn-cadastrar">Cadastrar</button>
+    </form>
+    <button type="button" class="btn-voltar" th:onclick="|window.location.href='@{/login}'|">Voltar ao Login</button>
+  </div>
+</body>
+</html>

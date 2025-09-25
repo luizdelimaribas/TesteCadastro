@@ -1,10 +1,10 @@
-package com.ProjetoDemo.TesteCadastro;
+package br.loginCadastro.loginCadastro;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TesteCadastroApplicationTests {
+class LoginCadastroApplicationTests {
 
 	@Test
 	void contextLoads() {
